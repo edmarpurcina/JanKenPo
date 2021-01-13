@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         Score score = new Score();
         TextView scorePlayer = findViewById(R.id.textPointsPlayer);
         TextView scoreApp = findViewById(R.id.textPointsApp);
+        TextView match = findViewById(R.id.textEmpatar);
 
         switch (app_choice[number_random]){
             case "pedra":
@@ -57,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
 
         if (app_choice[number_random] == player_choice){ //empate
             result.setText("Houve um Empate");
+            score.setScoreMatch();
+            match.setText(""+score.getMatch());
+
+
         }else if(
                 (app_choice[number_random] == "pedra" && player_choice== "tesoura" ) ||
                 (app_choice[number_random] == "tesoura" && player_choice== "papel" ) ||
@@ -73,6 +78,24 @@ public class MainActivity extends AppCompatActivity {
             score.setScorePlayer();
             scorePlayer.setText(""+score.getScorePlayer());
         }
+
+    }
+
+    public void resetGame( View view){
+        TextView scorePlayer = findViewById(R.id.textPointsPlayer);
+        TextView scoreApp = findViewById(R.id.textPointsApp);
+        TextView scoreMatch = findViewById(R.id.textEmpatar);
+        TextView result = findViewById(R.id.textView2);
+        Score score = new Score();
+
+        scoreApp.setText("0");
+        scorePlayer.setText("0");
+        scoreMatch.setText("0");
+        result.setText("Escolha Uma Opção Abaixo");
+
+        score.setScorePlayer(0);
+        score.setScoreApp(0);
+        score.setScoreMatch(0);
 
     }
 
