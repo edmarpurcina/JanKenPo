@@ -1,15 +1,15 @@
 package com.example.jankenpo;
 
 public class Score {
-    private int scorePlayer = 0;
-    private int scoreApp = 0;
+    private static int scorePlayer;
+    private static int scoreApp;
 
     public int getScorePlayer() {
         return scorePlayer;
     }
 
-    public void setScorePlayer(int score) {
-        scorePlayer = this.scorePlayer + score;
+    public void setScorePlayer() {
+        scorePlayer ++;
         System.out.println(this.scorePlayer);
     }
 
@@ -17,8 +17,9 @@ public class Score {
         return scoreApp;
     }
 
-    public void setScoreApp(int score) {
-        this.scoreApp += this.scoreApp + score;
+    public void setScoreApp() {
+        System.out.println(this.scoreApp+"##");
+        this.scoreApp ++;
         System.out.println(this.scoreApp);
     }
 }

@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         ImageView imageView = findViewById(R.id.ImageResultado);
         TextView result = findViewById(R.id.textView2);
         Score score = new Score();
-        TextView scorePlayerText = findViewById(R.id.textPointsPlayer);
-        TextView scoreAppText = findViewById(R.id.textPointsApp);
+        TextView scorePlayer = findViewById(R.id.textPointsPlayer);
+        TextView scoreApp = findViewById(R.id.textPointsApp);
 
         switch (app_choice[number_random]){
             case "pedra":
@@ -56,22 +56,22 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (app_choice[number_random] == player_choice){ //empate
-            result.setText("Ouve Um empate");
+            result.setText("Houve um Empate");
         }else if(
                 (app_choice[number_random] == "pedra" && player_choice== "tesoura" ) ||
                 (app_choice[number_random] == "tesoura" && player_choice== "papel" ) ||
                 (app_choice[number_random] == "papel" && player_choice== "pedra" )
         ){ // maquina ganhou
 
-            result.setText("App venceu :(");
-            score.setScoreApp(1);
-            scoreAppText.setText(""+score.getScoreApp());
+            result.setText("App Venceu :(");
+            score.setScoreApp();
+            scoreApp.setText(""+score.getScoreApp());
 
 
         }else{ // usuario ganhou
             result.setText("Você Venceu :D");
-            score.setScorePlayer(1);
-            scorePlayerText.setText(""+score.getScorePlayer());
+            score.setScorePlayer();
+            scorePlayer.setText(""+score.getScorePlayer());
         }
 
     }
