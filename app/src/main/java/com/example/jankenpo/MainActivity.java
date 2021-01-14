@@ -86,12 +86,14 @@ public class MainActivity extends AppCompatActivity {
         TextView scoreApp = findViewById(R.id.textPointsApp);
         TextView scoreMatch = findViewById(R.id.textEmpatar);
         TextView result = findViewById(R.id.textView2);
+        ImageView imgResult = findViewById(R.id.ImageResultado);
         Score score = new Score();
 
         scoreApp.setText("0");
         scorePlayer.setText("0");
         scoreMatch.setText("0");
         result.setText("Escolha Uma Opção Abaixo");
+        imgResult.setImageResource(R.drawable.padrao);
 
         score.setScorePlayer(0);
         score.setScoreApp(0);
